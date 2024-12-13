@@ -1,0 +1,12 @@
+.measurable * {
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.measurable span {
+    white-space: pre;
+}
+
+.stylishStringRoot {
+    position: relative;
+}

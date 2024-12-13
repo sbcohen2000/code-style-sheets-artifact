@@ -1,0 +1,41 @@
+cabal-version:      2.4
+name:               stylish-text
+version:            0.1.0.0
+author:             Sam Cohen and Ravi Chugh
+
+common warnings
+    ghc-options: -Wall
+                 -Wextra
+                 -Wno-name-shadowing
+                 -Wno-missing-signatures
+
+library
+    import: warnings
+    build-depends: aeson
+                 , base
+                 , containers
+                 , lens
+                 , megaparsec
+                 , mtl
+                 , template-haskell
+                 , text
+                 , th-lift
+                 , vector
+
+    exposed-modules: Layout
+                   , Layout.Geometry
+                   , Stylesheet
+                   , StylishText
+                   , StylishText.Renderable
+                   , StylishText.Utils
+
+    other-modules: Layout.Algorithm
+                 , Layout.IntervalTree
+                 , Layout.Types
+                 , Stylesheet.Parser
+                 , Stylesheet.Types
+                 , StylishText.Style
+                 , StylishText.Types
+
+    hs-source-dirs: src
+    default-language: GHC2021

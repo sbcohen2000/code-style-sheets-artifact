@@ -1,0 +1,26 @@
+cabal-version:      2.4
+name:               chi
+version:            0.1.0.0
+author:             Sam Cohen and Ravi Chugh
+
+common warnings
+    ghc-options: -Wall
+                 -Wextra
+                 -Wno-name-shadowing
+                 -Wno-missing-signatures
+
+library
+    import: warnings
+    build-depends: base
+                 , containers
+                 , mtl
+                 , stylish-text
+                 , text
+                 , ts-parser
+
+    exposed-modules: CHI, CHI.Types
+
+    other-modules: CHI.Parser
+
+    hs-source-dirs: src
+    default-language: GHC2021

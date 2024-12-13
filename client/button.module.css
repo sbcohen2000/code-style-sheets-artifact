@@ -1,0 +1,22 @@
+.buttonRoot {
+    align-items: center;
+    background: linear-gradient(#e6e6e6 0%, #b3b3b3 100%);
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-flex;
+    filter: drop-shadow(0px 0px 1px black);
+    font-family: sans-serif;
+    font-size: 0.7em;
+    height: 1em;
+    justify-content: center;
+    margin: 2px;
+    padding: 4px;
+}
+
+.buttonRoot:hover {
+    filter: drop-shadow(0px 0px 1px black) brightness(1.2);
+}
+
+.buttonRoot:active {
+    filter: drop-shadow(0px 0px 1px black) invert();
+}

@@ -1,0 +1,8 @@
+packages:
+  chi
+  tiny-chi
+  hass.cabal
+  stylish-text
+  ts-parser
+  ts-parser/haskell-tree-sitter/tree-sitter
+  ts-parser/haskell-tree-sitter/tree-sitter-haskell

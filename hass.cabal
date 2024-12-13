@@ -1,0 +1,133 @@
+cabal-version:      2.4
+name:               hass
+version:            0.1.0.0
+author:             Sam Cohen and Ravi Chugh
+
+common warnings
+    ghc-options: -Wall
+                 -Wextra
+                 -Wno-name-shadowing
+                 -Wno-missing-signatures
+
+common deps
+    build-depends: base, text, filepath
+
+library
+    import: deps, warnings
+
+    exposed-modules: Server
+                   , Requests
+
+    build-depends: aeson
+                 , bytestring
+                 , http-types
+                 , mime-types
+                 , mtl
+                 , stylish-text
+                 , wai
+                 , wai-websockets
+                 , warp
+                 , websockets
+
+    hs-source-dirs: src
+    default-language: GHC2021
+
+common tiny-chi-example
+    ghc-options: -Wno-unused-matches
+    default-extensions: LambdaCase, QuasiQuotes
+    other-modules: TinyCommon
+
+    build-depends: tiny-chi
+                 , stylish-text
+                 , hass
+                 , mtl
+                 , syb
+                 , containers
+                 , colour
+
+executable TypeError
+    import: deps, warnings, tiny-chi-example
+    main-is: TypeError.hs
+
+    hs-source-dirs: app
+    default-language: GHC2021
+
+executable HeatMap
+    import: deps, warnings, tiny-chi-example
+    main-is: HeatMap.hs
+
+    build-depends: blaze-html
+
+    hs-source-dirs: app
+    default-language: GHC2021
+
+executable ProjectionBoxes
+    import: deps, warnings, tiny-chi-example
+    main-is: ProjectionBoxes.hs
+
+    hs-source-dirs: app
+    default-language: GHC2021
+
+executable SemanticHighlighting
+    import: deps, warnings, tiny-chi-example
+    main-is: SemanticHighlighting.hs
+
+    hs-source-dirs: app
+    default-language: GHC2021
+
+executable TestRunner
+    import: deps, warnings, tiny-chi-example
+    main-is: TestRunner.hs
+
+    hs-source-dirs: app
+    default-language: GHC2021
+
+common chi-example
+    ghc-options: -Wno-unused-matches
+    default-extensions: LambdaCase, QuasiQuotes
+    other-modules: Common
+
+    build-depends: chi
+                 , stylish-text
+                 , hass
+                 , mtl
+                 , time
+
+executable SyntaxHighlighting
+    import: deps, warnings, chi-example
+    main-is: SyntaxHighlighting.hs
+
+    hs-source-dirs: app
+    default-language: GHC2021
+
+executable Blocks
+    import: deps, warnings, chi-example
+    main-is: Blocks.hs
+
+    hs-source-dirs: app
+    default-language: GHC2021
+
+executable PointFreePipeline
+    import: deps, warnings, chi-example
+    main-is: PointFreePipeline.hs
+
+    build-depends: containers
+
+    hs-source-dirs: app
+    default-language: GHC2021
+
+executable UserCustomized
+    import: deps, warnings, chi-example
+    main-is: UserCustomized.hs
+
+    build-depends: containers
+
+    hs-source-dirs: app
+    default-language: GHC2021
+
+executable SkeletonCode
+    import: deps, warnings, chi-example
+    main-is: SkeletonCode.hs
+
+    hs-source-dirs: app
+    default-language: GHC2021

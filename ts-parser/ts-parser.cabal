@@ -1,0 +1,21 @@
+cabal-version:      2.4
+name:               ts-parser
+version:            0.1.0.0
+author:             Sam Cohen and Ravi Chugh
+
+common warnings
+    ghc-options: -Wall -Wextra -Wno-name-shadowing
+
+library
+   import: warnings
+   build-depends: base
+                , filepath
+                , parser-combinators
+                , text
+                , tree-sitter
+                , tree-sitter-haskell
+
+   exposed-modules: TS.Parser
+
+   hs-source-dirs: src
+   default-language: GHC2021

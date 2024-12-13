@@ -1,0 +1,44 @@
+cabal-version:      2.4
+name:               tiny-chi
+version:            0.1.0.0
+author:             Sam Cohen and Ravi Chugh
+
+common warnings
+    ghc-options: -Wall
+                 -Wextra
+                 -Wno-name-shadowing
+                 -Wno-missing-signatures
+
+library
+    import: warnings
+    build-depends: base
+                 , blaze-html
+                 , containers
+                 , mtl
+                 , random
+                 , stylish-text
+                 , syb
+                 , text
+                 , ts-parser
+
+    exposed-modules: Tiny.CHI
+                   , Tiny.CHI.Types
+                   , Tiny.CHI.Value
+                   , Tiny.CHI.Anno
+                   , Tiny.CHI.DefaultStylish
+                   , Tiny.CHI.ProjectionBoxesStylish
+                   , Tiny.CHI.ClassicProjectionBoxesStylish
+                   , Tiny.CHI.Typecheck.Types
+
+    other-modules: Tiny.CHI.Parser
+                 , Tiny.CHI.Builtins
+                 , Tiny.CHI.Core
+                 , Tiny.CHI.Core.Anno
+                 , Tiny.CHI.Eval
+                 , Tiny.CHI.Rename
+                 , Tiny.CHI.StylishCode
+                 , Tiny.CHI.Typecheck
+                 , Tiny.CHI.Util
+
+    hs-source-dirs: src
+    default-language: GHC2021

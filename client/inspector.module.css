@@ -1,0 +1,106 @@
+.summary_root {
+    display: inline-grid;
+    justify-items: start;
+    font-family: sans-serif;
+    font-size: 0.7em;
+    column-gap: 0.7ch;
+    cursor: pointer;
+    padding: 3px;
+}
+
+.colorful {
+    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.summary_root.inverted_colors {
+    color: white;
+}
+
+.grayed_out {
+    opacity: 0.5;
+}
+
+.non_printable {
+    font-family: monospace;
+    padding: 0.125em;
+    border-radius: 0.25em;
+    margin: 1px;
+    background-color: #d0e5f2;
+    color: #0c6eab;
+}
+
+.whitespace {
+    font-weight: bold;
+}
+
+.newline {
+}
+
+.text_fragment {
+    font-family: monospace;
+    color: #0c6eab;
+}
+
+.html_fragment {
+    font-family: monospace;
+    font-weight: bold;
+    color: brown;
+}
+
+.class_preview {
+}
+
+/* The below css for drawing connecting lines is due to:
+ * https://stackoverflow.com/a/34611099 */
+li,
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul li {
+    margin-left: 15px;
+    position: relative;
+    padding-left: 5px;
+}
+
+/* vertical segment */
+ul li::before {
+    content: " ";
+    position: absolute;
+    width: 2px;
+    background-color: #ccc;
+    top: 5px;
+    bottom: -12px;
+    left: -10px;
+}
+
+/* no vertical segments on the last child of a list */
+ul li:not(:first-child):last-child::before {
+    display: none;
+}
+
+/* vertical segment on only child */
+ul li:only-child::before {
+    display: list-item;
+    content: " ";
+    position: absolute;
+    width: 2px;
+    background-color: #ccc;
+    top: 5px;
+    bottom: 7px;
+    height: 7px;
+    left: -10px;
+}
+
+/* horizontal segment */
+ul li::after {
+    content: " ";
+    position: absolute;
+    left: -10px;
+    width: 10px;
+    height: 2px;
+    background-color: #ccc;
+    top: 12px;
+}

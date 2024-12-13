@@ -1,0 +1,37 @@
+.context_menu_frame {
+    display: flex;
+    flex-direction: column;
+    background-color: #eee;
+    box-shadow: 0 0 3px black;
+}
+
+.menu_item_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    padding: 2px;
+}
+
+.menu_item_container:hover {
+    color: #eee;
+    background: linear-gradient(rgba(153,187,235,1) 0%, rgba(65,125,227,1) 35%, rgba(21,45,164,1) 100%);
+}
+
+.menu_item_label {
+    font-family: sans-serif;
+    font-size: 0.8em;
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    margin-right: 2px;
+}
+
+.icon_placeholder {
+    width: 1em;
+    height: 1em;
+    background-color: transparent;
+    margin-right: 2px;
+}

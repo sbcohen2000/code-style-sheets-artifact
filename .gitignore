@@ -1,0 +1,4 @@
+/dist-client
+/dist-newstyle
+/.direnv
+*.swp

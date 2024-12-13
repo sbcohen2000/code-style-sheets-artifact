@@ -1,0 +1,3 @@
+[submodule "ts-parser/haskell-tree-sitter"]
+	path = ts-parser/haskell-tree-sitter
+	url = https://github.com/jorpic/haskell-tree-sitter.git
