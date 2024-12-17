@@ -14,7 +14,7 @@ those seen in some research and production programming systems (as
 mentioned in the paper).
 
 With that in mind, the purpose of this artifact is twofold. It serves
-as (1) a way for the reader of our paper to decide for him/herself if
+as (1) a way for the reader of our paper to decide for themselves if
 the style sheets we present succeed in describing an expressive
 interface for multivarious program visualizations, as we claim they do
 in the paper. And (2), it serves as a reference implementation that a
@@ -45,8 +45,8 @@ HTML page, and to respond to requests from the server about the size
 of the elements to be laid out.
 
 In order to view examples, we need to build both the client and the
-server.  The below instructions describe how to do this, and how to
-run an example.
+server. The below instructions describe how to do this, and how to run
+an example.
 
 ** Building the Client
 
@@ -160,6 +160,10 @@ straightforward React application. There is one file of interest:
   description of a fragment (~Types.MeasureSpec~), instantiates the
   element in the DOM with its computed styles, and responds with the
   size of the element.
+The client also contains the beginnings of a "DOM inspector for Hass,"
+as mentioned in section 8.4 of the paper. (It can be invoked by
+clicking and shift-clicking on elements of the rendered displays in
+the browser.)
 ** ~dist-client/~
 ~dist-client/~ contains the compiled client code. You shouldn't need
 to look in here.
@@ -193,7 +197,8 @@ computation and layout algorithms as presented in the paper.
 These are the two most important files for understanding (and
 re-using) the implementation. ~stylish-text/~ also contains the
 definition of the surface syntax for our style sheets.
-- ~stylish-text/src/Stylesheet/Parser.hs~ is the style sheet parser, while
+- ~stylish-text/src/Stylesheet/Parser.hs~ is the style sheet parser,
+  while
 - ~stylish-text/src/Stylesheet/Types.hs~ is the type definition of a
   style sheet, and the quasi-quoter which allows us to embed style
   sheets using our custom syntax inside Haskell source files.
