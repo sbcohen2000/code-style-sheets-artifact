@@ -33,7 +33,7 @@ implementation of layout.
 
 To reproduce the examples in this repository, you\'ll need a computer
 with an installation of `ghc` (\>= 9.2.1), and `cabal` (\>= 2.4), as
-well as `node` and `npm`.
+well as `node` (\>= 14.17) and `npm`.
 
 # Getting Started Guide
 
@@ -70,21 +70,14 @@ Building the front end should create and populate a directory called
 
 ## Building the Server
 
-The code style sheets server depends on the tree-sitter library to parse
-Haskell code. The Haskell bindings for this library are included as a
-submodule at `ts-parser/haskell-tree-sitter/`. We need to initialize the
-submodule before we can build the server.
+The code style sheets server depends on the tree-sitter library to
+parse Haskell code. The Haskell bindings for this library are included
+at at `ts-parser/haskell-tree-sitter/`. For the purposes of this
+artifact, this library, and its dependencies, has been "inlined"
+(rather than using a git submodule, which are not supported by
+Zenodo).
 
-We have written a shell script to execute the necessary commands in
-`scripts/initSubmodules.sh`. Run the following from the root of the
-repository:
-
-``` shell
-$ ./scripts/initSubmodules.sh
-```
-
-Now that we\'ve made all of the dependencies available, we can build the
-project. Run the following:
+To build the server, run the following:
 
 ``` shell
 $ cabal build
@@ -198,10 +191,8 @@ parser defined in `chi/`, or interpreted by the interpreter defined in
 
 ## `scripts/`
 
-`scripts/` contains two scripts:
+`scripts/` contains:
 
--   `scripts/initSubmodules.sh`, which should be used to build the
-    project, and
 -   `scripts/countLOC.rb`, which counts the lines of code.
 
 ## `src/`
